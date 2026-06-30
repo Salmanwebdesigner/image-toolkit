@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 import { toolRoutes } from "@/lib/tool-routes";
 import Image from 'next/image';
-
+import logo from "@/public/images/logo.png";
 
 
 interface SiteShellProps {
@@ -21,7 +21,7 @@ export function SiteShell({ children }: SiteShellProps) {
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-2">
           <Link href="/" className="flex items-center gap-3">
             <Image
-              src="/images/logo.png"
+              src={logo}
               alt="Image Toolkit"
               title="Image Toolkit"
               width={256}
