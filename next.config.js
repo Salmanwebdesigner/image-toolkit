@@ -1,12 +1,15 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+
+const isGithubActions = process.env.GITHUB_ACTIONS === "true";
+
+module.exports = {
   output: "export",
-  basePath: "/image-toolkit",
-  assetPrefix: "/image-toolkit",
   trailingSlash: true,
+
   images: {
     unoptimized: true,
   },
-};
 
-module.exports = nextConfig;
+  basePath: isGithubActions ? "/image-toolkit" : "",
+  assetPrefix: isGithubActions ? "/image-toolkit" : "",
+};
