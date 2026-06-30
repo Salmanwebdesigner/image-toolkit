@@ -1,8 +1,9 @@
-const isProd = process.env.NODE_ENV === 'production';
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  basePath: isProd ? '/image-toolkit' : '',
-  assetPrefix: isProd ? '/image-toolkit/' : '/',
+  output: "export",
+  basePath: "/image-toolkit",
+  assetPrefix: "/image-toolkit",
+  trailingSlash: true,
   images: {
     unoptimized: true,
   },
